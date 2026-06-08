@@ -287,63 +287,36 @@ async function downloadReceipt() {
   if (lineItems.every((i) => !i.description)) { showToast("Add at least one line item.", "error"); return; }
 
   isGenerating = true;
-  const btn = $("btnDownload");
-  btn.disabled = true;
-  btn.textContent = "⏳ Generating PDF…";
+  $("btnDownload").disabled = true;
+  $("btnDownload").textContent = "Generating...";
 
-  try {
-    const apiKey = await getOrCreateGuestKey();
-    const payload = {
-      from:        data.from,
-      to:          data.to,
-      receipt:     data.receipt,
-      payment_method:   data.paymentMethod,
-      reference_number: data.referenceNumber,
-      items:       lineItems.filter((i) => i.description),
-      tax_rate:    data.taxRate,
-      discount:    data.discount,
-      notes:       data.notes,
-      options: {
-        color:           data.color,
-        currency_symbol: data.currency,
-        template:        "modern",
-        pageSize:        "letter",
-      },
-    };
+  const previewHTML = renderPreviewHTML(collectFormData());
+  const toName = $("toName")?.value || 'customer';
+  const num = $("receiptNumber")?.value || 'RCT-001';
+  const filename = `receipt-${toName.replace(/\s+/g, '-').toLowerCase()}-${num}.pdf`;
 
-    const res  = await fetch(`${API_BASE}/generate`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-API-Key": apiKey || "guest" },
-      body: JSON.stringify(payload),
-    });
-    const result = await res.json();
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`
+    <!DOCTYPE html><html><head>
+      <meta charset="UTF-8"><title>${filename}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #fff; }
+        @media print { body { margin: 0; } @page { size: letter; margin: 0.5in; } }
+      </style>
+    </head><body>
+      ${previewHTML}
+      <script>document.fonts.ready.then(function(){setTimeout(function(){window.print();},300);});</script>
+    </body></html>
+  `);
+  printWindow.document.close();
 
-    if (!result.success || !result.pdf) {
-      showToast(result.error || "Failed to generate receipt. Please try again.", "error");
-      return;
-    }
-
-    // Download
-    const bytes  = atob(result.pdf);
-    const arr    = new Uint8Array(bytes.length);
-    for (let i = 0; i < bytes.length; i++) arr[i] = bytes.charCodeAt(i);
-    const blob   = new Blob([arr], { type: "application/pdf" });
-    const url    = URL.createObjectURL(blob);
-    const link   = document.createElement("a");
-    link.href     = url;
-    link.download = `receipt-${data.receipt.number || "001"}.pdf`;
-    link.click();
-    URL.revokeObjectURL(url);
-
-    showToast("✓ Receipt PDF downloaded!", "success");
-  } catch (err) {
-    console.error(err);
-    showToast("Network error. Please try again.", "error");
-  } finally {
-    isGenerating = false;
-    btn.disabled = false;
-    btn.textContent = "⬇ Download Receipt PDF";
-  }
+  isGenerating = false;
+  $("btnDownload").disabled = false;
+  $("btnDownload").textContent = "\u2b07 Download Receipt PDF";
+  showToast("Receipt ready \u2014 use Save as PDF in the print dialog", "success");
 }
 
 // ── Helpers ───────────────────────────────────────────────────
