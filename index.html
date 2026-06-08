@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>BuildReceipt — Free Receipt Generator | Create PDF Receipts Online</title>
+  <meta name="description" content="Generate professional PDF receipts for free. Enter payment details, itemize charges, and download instantly. Perfect for freelancers and small businesses. No signup required. Optionally sign in to save your work.">
+  <meta name="keywords" content="free receipt generator, receipt maker, create receipt online, PDF receipt, receipt template, payment receipt, proof of payment">
+  <link rel="canonical" href="https://buildreceipt.co/">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6010936774105671" crossorigin="anonymous"></script>
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuildReceipt — Free Receipt Generator">
+  <meta property="og:description" content="Generate professional PDF receipts instantly. No signup required.">
+  <meta property="og:url" content="https://buildreceipt.co/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://buildreceipt.co/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BuildReceipt — Free Receipt Generator">
+  <meta name="twitter:description" content="Generate professional PDF receipts instantly. No signup required.">
+  <meta name="twitter:image" content="https://buildreceipt.co/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BuildReceipt",
+    "url": "https://buildreceipt.co",
+    "description": "Free online receipt generator. Create and download professional PDF receipts instantly.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildReceipt",
+      "url": "https://buildreceipt.co"
+    }
+  }
+  </script>
+  <script src="/build-ecosystem-bar.js" defer></script>
+  <script src="/build-ecosystem-auth.js" defer></script>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar" id="navbar">
+    <a href="/" class="navbar-brand">🧾 BuildReceipt</a>
+    <div class="navbar-links" id="siteNav">
+      <a href="/about.html">About</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero-banner">
+    <h1>Receipts That Look Like You Take Payments Seriously</h1>
+    <p>Hand-scribbled receipts don't inspire confidence. Generate a clean, itemized PDF receipt with payment details and your branding — in under a minute.</p>
+  </section>
+
+  <!-- ── Main App ── -->
+  <main class="app-container">
+
+    <!-- ── FORM PANEL ── -->
+    <div class="form-panel" id="formPanel">
+
+      <!-- 📋 Your Information -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <h3>📋 Your Information</h3>
+        </div>
+        <div class="form-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fromName">Business / Your Name *</label>
+              <input type="text" id="fromName" placeholder="Acme Services" required>
+            </div>
+            <div class="form-group">
+              <label for="fromEmail">Email</label>
+              <input type="email" id="fromEmail" placeholder="billing@acme.com">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="fromStreet">Street Address</label>
+              <input type="text" id="fromStreet" placeholder="123 Main St">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fromCity">City</label>
+              <input type="text" id="fromCity" placeholder="Austin">
+            </div>
+            <div class="form-group">
+              <label for="fromState">State / ZIP</label>
+              <input type="text" id="fromState" placeholder="TX 78701">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fromPhone">Phone</label>
+              <input type="tel" id="fromPhone" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label for="accentColor">Accent Color</label>
+              <div class="color-row">
+                <input type="color" id="accentColor" value="#f43f5e">
+                <input type="text" id="accentColorHex" value="#f43f5e" style="flex:1" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 👤 Received From -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <h3>👤 Received From</h3>
+        </div>
+        <div class="form-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="toName">Customer Name *</label>
+              <input type="text" id="toName" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="toEmail">Customer Email</label>
+              <input type="email" id="toEmail" placeholder="jane@client.com">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="toStreet">Street Address</label>
+              <input type="text" id="toStreet" placeholder="456 Oak Ave">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="toCity">City</label>
+              <input type="text" id="toCity" placeholder="Denver">
+            </div>
+            <div class="form-group">
+              <label for="toState">State / ZIP</label>
+              <input type="text" id="toState" placeholder="CO 80202">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🧾 Receipt Details -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <h3>🧾 Receipt Details</h3>
+        </div>
+        <div class="form-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="receiptNumber">Receipt Number</label>
+              <input type="text" id="receiptNumber" placeholder="RCT-001" value="RCT-001">
+            </div>
+            <div class="form-group">
+              <label for="receiptDate">Receipt Date</label>
+              <input type="date" id="receiptDate">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="currency">Currency Symbol</label>
+              <input type="text" id="currency" placeholder="$" value="$" maxlength="3">
+            </div>
+            <div class="form-group">
+              <label for="paymentMethod">Payment Method</label>
+              <select id="paymentMethod">
+                <option value="cash">Cash</option>
+                <option value="check">Check</option>
+                <option value="credit_card">Credit Card</option>
+                <option value="debit_card">Debit Card</option>
+                <option value="bank_transfer" selected>Bank Transfer</option>
+                <option value="paypal">PayPal</option>
+                <option value="venmo">Venmo</option>
+                <option value="zelle">Zelle</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="referenceNumber">Reference / Transaction Number</label>
+              <input type="text" id="referenceNumber" placeholder="TXN-20260607-001">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🛒 Items / Services -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <h3>🛒 Items / Services</h3>
+        </div>
+        <div class="line-items-header">
+          <span>Description</span>
+          <span>Qty</span>
+          <span>Rate</span>
+          <span>Amount</span>
+          <span></span>
+        </div>
+        <div id="lineItems">
+          <!-- Dynamic line item rows inserted here -->
+        </div>
+        <button type="button" class="btn-add-item" id="btnAddItem">+ Add Line Item</button>
+
+        <!-- Tax & Discount -->
+        <div class="form-body" style="padding-top:0;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="taxRate">Tax (%)</label>
+              <input type="number" id="taxRate" placeholder="0" value="0" min="0" step="0.01">
+            </div>
+            <div class="form-group">
+              <label for="discount">Discount ($)</label>
+              <input type="number" id="discount" placeholder="0" value="0" min="0" step="0.01">
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Totals -->
+        <div class="totals-display" id="totalsDisplay">
+          <div class="totals-row"><span>Subtotal</span><span id="dispSubtotal">$0.00</span></div>
+          <div class="totals-row" id="taxRow"><span id="dispTaxLabel">Tax</span><span id="dispTax">$0.00</span></div>
+          <div class="totals-row" id="discountRow"><span>Discount</span><span id="dispDiscount">-$0.00</span></div>
+          <div class="totals-row total"><span>AMOUNT RECEIVED</span><span id="dispTotal">$0.00</span></div>
+        </div>
+      </div>
+
+      <!-- 📝 Notes -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <h3>📝 Notes</h3>
+        </div>
+        <div class="form-body">
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="notes">Notes</label>
+              <textarea id="notes" rows="2" placeholder="Thank you for your business!"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download -->
+      <div style="display:flex;gap:0.75rem;">
+        <button type="button" class="btn-download" id="btnDownload" style="flex:1;">
+          ⬇ Download Receipt PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- ── PREVIEW PANEL ── -->
+    <div class="preview-panel" id="previewPanel">
+      <div class="preview-header">
+        <h3>🧾 Live Preview</h3>
+        <span class="preview-badge">Updates as you type</span>
+      </div>
+      <div class="preview-body" id="previewBody">
+        <!-- Live receipt rendered here by JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Toast ── -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ── SEO Cards ── -->
+  <section style="max-width:900px;margin:0 auto;padding:2.5rem 2rem 0;">
+    <h2 style="font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,#fff,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.75rem;">Why Use BuildReceipt?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2rem;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">🚀 Instant PDF Downloads</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">No email signup. No 7-day trial. Fill in your details and download a professional receipt PDF in seconds — every time, completely free.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">🎨 Your Brand, Your Colors</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">Pick an accent color that matches your business. The receipt header, table headers, and totals all update to reflect your brand in real time.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">💳 Payment Method Tracking</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">Record how you were paid — cash, check, credit card, PayPal, Venmo, Zelle, or bank transfer. Reference numbers keep your records airtight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pro Tips ── -->
+  <section style="max-width:900px;margin:0 auto;padding:1rem 2rem 0;">
+    <h2 style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:1.25rem;">📌 Receipt Tips That Actually Make a Difference</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">Always issue a receipt — even for cash</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">Cash transactions leave no paper trail. A receipt protects both parties — the payer has proof of payment, and you have proof you received it. This is especially important for deposits and partial payments.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">Include the payment method and reference number</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">If a customer disputes a charge six months from now, the reference number ties your receipt to a specific transaction. "Bank Transfer" is good; "Bank Transfer — TXN-20260607-001" is bulletproof.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">Itemize every charge — don't lump-sum</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">A receipt that says "$500 — Services" raises more questions than it answers. Break it down: "2 hrs Consultation @ $150, Material Costs $200." Clarity prevents callbacks.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;">
+        <p style="font-size:0.82rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">Use sequential receipt numbers</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">RCT-001, RCT-002, RCT-003. Sequential numbering makes it easy to spot gaps, track volume, and look professional if you're ever audited. Start with 001 and never skip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div style="max-width:860px;margin:0 auto 1.25rem;padding:0 1.5rem;">
+      <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:0.6rem;">Also from the Build ecosystem</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+        <a href="https://buildinvoice.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;color:var(--text-secondary);text-decoration:none;">⚡ <strong style="color:var(--text-primary);">BuildInvoice</strong> — Free invoice generator</a>
+        <a href="https://buildcertificates.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;color:var(--text-secondary);text-decoration:none;">🏅 <strong style="color:var(--text-primary);">BuildCertificates</strong> — Free certificate generator</a>
+        <a href="https://buildpdf.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;color:var(--text-secondary);text-decoration:none;">📄 <strong style="color:var(--text-primary);">BuildPDF</strong> — Free file-to-PDF converter</a>
+        <a href="https://buildquotes.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;color:var(--text-secondary);text-decoration:none;">💼 <strong style="color:var(--text-primary);">BuildQuotes</strong> — Free price quote generator</a>
+        <a href="https://buildchangeorder.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;color:var(--text-secondary);text-decoration:none;">📋 <strong style="color:var(--text-primary);">BuildChangeOrder</strong> — Free change order generator</a>
+      </div>
+    </div>
+    <p>© 2026 BuildReceipt · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </footer>
+
+  <script src="receipt-app.js"></script>
+  <script src="receipt-save-integration.js" defer></script>
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const siteNav = document.getElementById('siteNav');
+    const headerInner = navToggle ? navToggle.closest('.navbar') : null;
+    function closeNav() {
+      siteNav.classList.remove('open'); navToggle.classList.remove('open');
+      document.body.style.overflow = '';
+      const btn = siteNav.querySelector('.nav-close'); if (btn) btn.remove();
+      setTimeout(() => headerInner.appendChild(siteNav), 300);
+    }
+    if (navToggle && siteNav && headerInner) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.contains('open');
+        if (!isOpen) {
+          document.body.appendChild(siteNav);
+          const closeBtn = document.createElement('button');
+          closeBtn.className = 'nav-close';
+          closeBtn.setAttribute('aria-label', 'Close menu');
+          closeBtn.innerHTML = '&#x2715;';
+          closeBtn.addEventListener('click', closeNav);
+          siteNav.prepend(closeBtn);
+          requestAnimationFrame(() => { siteNav.classList.add('open'); navToggle.classList.add('open'); });
+          document.body.style.overflow = 'hidden';
+        } else { closeNav(); }
+      });
+      siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Privacy Policy — BuildReceipt</title>
+  <meta name="description" content="BuildReceipt privacy policy. We don't store your receipts, client data, or any uploaded content.">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6010936774105671" crossorigin="anonymous"></script>
+  <style>.page-container { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; } .page-container h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #fff, #f43f5e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; } .page-container h2 { font-size: 1.1rem; color: var(--accent-hover); margin: 2rem 0 0.5rem; } .page-container p, .page-container li { color: var(--text-secondary); line-height: 1.8; } .page-container p { margin-bottom: 1rem; } .page-container ul { padding-left: 1.5rem; margin-bottom: 1rem; } .page-container a { color: var(--accent-hover); } .effective { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }</style>
+</head>
+<body>
+  <nav class="navbar"><a href="/" class="navbar-brand">🧾 BuildReceipt</a><div class="navbar-links" id="siteNav"><a href="/">Generator</a><a href="/about.html">About</a></div><button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="page-container">
+    <h1>Privacy Policy</h1>
+    <p class="effective">Effective: June 7, 2026</p>
+
+    <h2>What We Collect</h2>
+    <p>When you register for an API key, we store:</p>
+    <ul>
+      <li>Your email address (for account identification)</li>
+      <li>A hashed version of your API key (we never store the raw key)</li>
+      <li>Monthly usage counts</li>
+    </ul>
+
+    <h2>What We Don't Collect</h2>
+    <p>We do <strong>not</strong> store:</p>
+    <ul>
+      <li>Receipt content or customer data</li>
+      <li>PDF files (generated on the fly and immediately returned)</li>
+      <li>Business names, addresses, or financial information from your receipts</li>
+      <li>Payment method details or transaction reference numbers</li>
+    </ul>
+
+    <h2>Data Processing</h2>
+    <p>Receipt data is processed in memory only. Once your PDF is generated and returned in the API response, all receipt data is immediately discarded. No receipt content is ever written to disk, logged, or stored in a database.</p>
+
+    <h2>Third-Party Services</h2>
+    <ul>
+      <li><strong>Netlify</strong> — hosting and serverless functions</li>
+      <li><strong>Google AdSense</strong> — advertising on our consumer site (uses cookies)</li>
+      <li><strong>Google Firebase</strong> — optional account authentication and data storage</li>
+    </ul>
+
+    <h2>Cookies</h2>
+    <p>Our site uses cookies from Google AdSense for ad personalization. You can opt out at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
+
+    <h2>Optional Account &amp; Data Storage</h2>
+    <p>All Build tools work fully without an account. If you choose to sign in, we store:</p>
+    <ul>
+      <li>Your email address and display name</li>
+      <li>Documents you explicitly save (e.g. receipts)</li>
+      <li>Client contact information you enter</li>
+    </ul>
+    <p>This data is stored in Google Cloud Firestore and associated with your account. You can delete your account and all associated data at any time by emailing <a href="mailto:buildpdf.help@gmail.com">buildpdf.help@gmail.com</a>.</p>
+    <p>If you do not create an account, no document data is stored.</p>
+
+    <h2>Data Deletion</h2>
+    <p>To delete your API key and associated data, email <a href="mailto:buildpdf.help@gmail.com">buildpdf.help@gmail.com</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Email <a href="mailto:buildpdf.help@gmail.com">buildpdf.help@gmail.com</a>.</p>
+  </div>
+  <footer class="site-footer"><p>© 2026 BuildReceipt · <a href="/">Generator</a> · <a href="/about.html">About</a> · <a href="/terms.html">Terms</a></p></footer>
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const siteNav = document.getElementById('siteNav');
+    const headerInner = navToggle ? navToggle.closest('.navbar') : null;
+    function closeNav() {
+      siteNav.classList.remove('open'); navToggle.classList.remove('open');
+      document.body.style.overflow = '';
+      const btn = siteNav.querySelector('.nav-close'); if (btn) btn.remove();
+      setTimeout(() => headerInner.appendChild(siteNav), 300);
+    }
+    if (navToggle && siteNav && headerInner) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.contains('open');
+        if (!isOpen) {
+          document.body.appendChild(siteNav);
+          const closeBtn = document.createElement('button');
+          closeBtn.className = 'nav-close';
+          closeBtn.setAttribute('aria-label', 'Close menu');
+          closeBtn.innerHTML = '&#x2715;';
+          closeBtn.addEventListener('click', closeNav);
+          siteNav.prepend(closeBtn);
+          requestAnimationFrame(() => { siteNav.classList.add('open'); navToggle.classList.add('open'); });
+          document.body.style.overflow = 'hidden';
+        } else { closeNav(); }
+      });
+      siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    }
+  </script>
+</body>
+</html>

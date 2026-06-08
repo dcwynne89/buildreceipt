@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>About — BuildReceipt</title>
+  <meta name="description" content="BuildReceipt is a free receipt generator for freelancers, service providers, and small businesses. Learn about our mission to make payment documentation simple.">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6010936774105671" crossorigin="anonymous"></script>
+  <style>.page-container { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; } .page-container h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #fff, #f43f5e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; } .page-container h2 { font-size: 1.2rem; color: var(--accent-hover); margin: 2rem 0 0.75rem; } .page-container p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; } .page-container a { color: var(--accent-hover); }</style>
+</head>
+<body>
+  <nav class="navbar"><a href="/" class="navbar-brand">🧾 BuildReceipt</a><div class="navbar-links" id="siteNav"><a href="/">Generator</a><a href="/about.html" style="color:var(--accent)">About</a></div><button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="page-container">
+    <h1>About BuildReceipt</h1>
+
+    <p>I built BuildReceipt because I was tired of writing receipts in a Notes app and texting screenshots to clients. It's embarrassing. You do good work, you get paid, and then you hand someone a receipt that looks like it was written on a napkin. That's not the last impression you want to leave.</p>
+
+    <p>The big tools — Square, QuickBooks, FreshBooks — are great if you're already locked into their ecosystem. But if you're a freelancer who just needs to confirm "yes, I got your money, here's the breakdown," those tools are absurd overkill. You don't need a dashboard. You need a form and a PDF.</p>
+
+    <h2>What I Actually Built</h2>
+    <p>A form on the left, a live receipt preview on the right. Enter your details, add line items, pick a payment method, and download a clean PDF with a "PAID" stamp. Done in under a minute. The PDF is generated server-side so it looks the same in every reader on every device — no browser print quirks.</p>
+
+    <p>Payment method tracking was important from day one. Whether someone paid you in cash, by check, or via Venmo, the receipt should say so. And the reference number field ties everything back to a specific transaction — critical if anything is ever disputed.</p>
+
+    <h2>Who It's For</h2>
+    <p>Service providers, freelancers, contractors, tutors, photographers, dog walkers — anyone who gets paid and needs to prove it. If you accept payment for anything and your client asks "can I get a receipt?", this tool exists so your answer is always "already sent."</p>
+
+    <h2>Privacy</h2>
+    <p>Your receipt data isn't stored anywhere. The PDF is generated, returned in the HTTP response, and that's it. Nothing is written to a database. Nothing is logged beyond basic request metrics. Your clients' details stay between you and them.</p>
+
+    <h2>Part of the Build Ecosystem</h2>
+    <p>BuildReceipt is part of a growing set of tools for independent workers: <a href="https://buildinvoice.co" target="_blank" rel="noopener">BuildInvoice</a>, <a href="https://buildquotes.co" target="_blank" rel="noopener">BuildQuotes</a>, <a href="https://buildchangeorder.co" target="_blank" rel="noopener">BuildChangeOrder</a>, <a href="https://buildpdf.co" target="_blank" rel="noopener">BuildPDF</a>, and <a href="https://buildcertificates.com" target="_blank" rel="noopener">BuildCertificates</a>. Same philosophy across all of them: tools that do one thing well, no login required.</p>
+
+    <h2>Contact</h2>
+    <p>Questions, bugs, or feature requests? <a href="mailto:buildpdf.help@gmail.com">buildpdf.help@gmail.com</a></p>
+  </div>
+  <footer class="site-footer"><p>© 2026 BuildReceipt · <a href="/">Generator</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></footer>
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const siteNav = document.getElementById('siteNav');
+    const headerInner = navToggle ? navToggle.closest('.navbar') : null;
+    function closeNav() {
+      siteNav.classList.remove('open'); navToggle.classList.remove('open');
+      document.body.style.overflow = '';
+      const btn = siteNav.querySelector('.nav-close'); if (btn) btn.remove();
+      setTimeout(() => headerInner.appendChild(siteNav), 300);
+    }
+    if (navToggle && siteNav && headerInner) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.contains('open');
+        if (!isOpen) {
+          document.body.appendChild(siteNav);
+          const closeBtn = document.createElement('button');
+          closeBtn.className = 'nav-close';
+          closeBtn.setAttribute('aria-label', 'Close menu');
+          closeBtn.innerHTML = '&#x2715;';
+          closeBtn.addEventListener('click', closeNav);
+          siteNav.prepend(closeBtn);
+          requestAnimationFrame(() => { siteNav.classList.add('open'); navToggle.classList.add('open'); });
+          document.body.style.overflow = 'hidden';
+        } else { closeNav(); }
+      });
+      siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    }
+  </script>
+</body>
+</html>
